@@ -1,0 +1,107 @@
+.nav-main {
+	font-size: $font_size; // override mobile media query
+	text-align: center;
+	margin-bottom: 4rem;
+  
+	@media (max-width: 38em) {
+	  margin-bottom: 2rem;
+	}
+  
+	ul {
+	  padding: 0;
+	  border-bottom-color: $bg4_color;
+	  border-bottom-width: $nav_bottom_border_width;
+	  border-bottom-style: solid;
+	}
+  
+	li {
+	  display: inline-block;
+  
+	  a {
+		color: $fg_color;
+		display: block;
+		text-decoration: none;
+		padding: 10px 50px;
+		// $nav-link-padding-y $nav-link-padding-x;
+	  }
+	}
+  
+	li.logo a {
+	//   color: $nav-icon-color;
+	//   background: $nav-icon-background-color;
+	  font-weight: bold;
+	  width: 1.6em;
+	  height: 1.6em;
+	  border-radius: 50px;
+	  line-height: 1.6em;
+	  margin: 0 1rem;
+	  padding: 0;
+	}
+  }
+
+  .hvr-underline-reveal {
+	@include hacks();
+  
+	position: relative;
+	overflow: hidden;
+  
+	&:before {
+	  content: "";
+	  position: absolute;
+	  z-index: -1;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  background: $blue2;
+	//   $nav-link-underline-color;
+	  height: 5px;
+  
+	  @include prefix(transform, translateY(4px));
+	  @include prefix(transition-property, transform);
+	  @include prefix(transition-duration, 0.2s);
+	  @include prefix(transition-timing-function, ease-out);
+	}
+  
+	&:hover:before,
+	&:focus:before,
+	&:active:before {
+	  @include prefix(transform, translateY(0));
+	}
+  }
+  
+  /* Ripple Out (from hover.css) */
+  @include keyframes(hvr-ripple-out) {
+	100% {
+	  top: -(6px + 6px);
+	  right: -(6px + 6px);
+	  bottom: -(6px + 6px);
+	  left: -(6px + 6px);
+	  opacity: 0;
+	}
+  }
+  
+  .hvr-ripple-out {
+	@include hacks();
+  
+	position: relative;
+  
+	&:before {
+	  content: '';
+	  position: absolute;
+	  border: $blue2 solid 4px;
+	//   $nav-icon-background-color solid 4px;
+	  border-radius: 50px;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  
+	  @include prefix(animation-duration, 0.5s);
+	}
+  
+	&:hover:before, 
+	&:focus:before, 
+	&:active:before {
+	  @include prefix(animation-name, hvr-ripple-out);
+	}
+  }
