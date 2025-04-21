@@ -52,11 +52,11 @@ fn switch(routes: Route) -> Html {
 fn app() -> Html {
     html! {
         <div class="main_container">
-            <BrowserRouter>
+            <HashRouter>
                 <Navbar />
                 // <- must be child of <BrowserRouter>
                 <Switch<Route> render={switch} />
-            </BrowserRouter>
+            </HashRouter>
         </div>
     }
 }
