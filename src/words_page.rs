@@ -1,8 +1,8 @@
+mod sort_button;
 mod word;
 mod word_details;
 mod words_list;
 mod words_list_header;
-mod sort_button;
 
 use gloo_net::http::Request;
 use yew::prelude::*;
@@ -35,7 +35,7 @@ pub fn words() -> Html {
         <div>
             <title>{"words"}</title>
 
-            <h1>{ "random selection of every word" }</h1>
+            <h1>{ "random selection from all words" }</h1>
             <WordsList words={(*words).clone()} />
 
 
