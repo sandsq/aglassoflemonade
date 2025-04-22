@@ -3,35 +3,49 @@
 @import "navigation";
 
 html {
-	font-family: 'Ubuntu Mono';
-	font-size: $font_size;
-	border-top: 10px solid $blue2;
+    font-family: "Ubuntu Mono", FontAwesome;
+    font-size: $font_size;
+    border-top: 10px solid $blue2;
 }
 
 body {
-	color: $fg_color;
-	background-color: $bg_color;
+    color: $fg_color;
+    background-color: $bg_color;
 }
 
 .main_container {
-	width: 50%;
-	margin: auto;
-	border: $test_border_size solid $fg_color;
+    width: 50%;
+    margin: auto;
+    border: $test_border_size solid $fg_color;
 }
 
 .active_nav_page {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .inactive_nav_page {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 h1 {
-	text-align: center;
-	font-size: 36px;
+    text-align: center;
+    font-size: 36px;
+}
+
+table {
+    width: 100%;
 }
 
 td {
-	border: $test_border_size solid black;
+    border: $test_border_size solid black;
+}
+
+.affirmative {
+    font-weight: bold;
+    color: $blue2;
+}
+
+.negative {
+    font-weight: bold;
+    color: $purple2;
 }

@@ -1,0 +1,57 @@
+[
+  {
+    "id": 0,
+    "word": "palimpsest",
+    "sounds_good": false,
+    "looks_good": false,
+    "means_good": true,
+    "overall_good": false,
+    "comment": "Meaning is very cool but it's awkward to say and I'm not a fan of 'palimp'.",
+    "entry_date": "2025-04-21",
+    "author": "me"
+  },
+  {
+    "id": 1,
+    "word": "halcyon",
+    "sounds_good": true,
+    "looks_good": true,
+    "means_good": true,
+    "overall_good": true,
+    "comment": "On the cusp of overall good / not good. It's a bit too uncommon so it often feels out of place to just use. When paired with descriptions commonly used alongside it, such as 'cloud', its goodness improves.",
+    "entry_date": "2025-04-21",
+    "author": "me"
+  },
+  {
+    "id": 2,
+    "word": "serendipity",
+    "sounds_good": true,
+    "looks_good": true,
+    "means_good": true,
+    "overall_good": true,
+    "comment": "nuff said",
+    "entry_date": "2025-04-21",
+    "author": "me"
+  },
+  {
+    "id": 3,
+    "word": "eclipse",
+    "sounds_good": true,
+    "looks_good": true,
+    "means_good": true,
+    "overall_good": true,
+    "comment": "well I thought a specific feature was removed but apparently not so I can't make the comment I was going to make",
+    "entry_date": "2025-04-21",
+    "author": "me"
+  },
+  {
+    "id": 4,
+    "word": "sonder",
+    "sounds_good": true,
+    "looks_good": true,
+    "means_good": true,
+    "overall_good": true,
+    "comment": "Despite sounding good (with similarities to words like 'sunder' and 'wander'), using good letters ('s', 'ond'), and having a meaning that I resonate with, the fact that this word was manufactured sours it. I need like 50 more years to accept it.",
+    "entry_date": "2025-04-21",
+    "author": "me"
+  }
+]

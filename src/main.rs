@@ -1,8 +1,8 @@
 mod about;
 mod home;
 mod nav_bar;
-mod thoughts;
-mod words;
+mod thoughts_page;
+mod words_page;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -12,8 +12,8 @@ use log::info;
 use about::About;
 use home::Home;
 use nav_bar::Navbar;
-use thoughts::Thoughts;
-use words::Words;
+use thoughts_page::Thoughts;
+use words_page::Words;
 
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
@@ -52,11 +52,13 @@ fn switch(routes: Route) -> Html {
 fn app() -> Html {
     html! {
         <div class="main_container">
-            <HashRouter>
+            // <HashRouter>
+            <BrowserRouter>
                 <Navbar />
                 // <- must be child of <BrowserRouter>
                 <Switch<Route> render={switch} />
-            </HashRouter>
+            </BrowserRouter>
+            // </HashRouter>
         </div>
     }
 }
