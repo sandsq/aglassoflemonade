@@ -1,7 +1,9 @@
 use chrono::NaiveDate;
 use serde::Deserialize;
+use yew::prelude::*;
+use yew_hooks::use_bool_toggle;
 
-#[derive(Clone, PartialEq, Deserialize)]
+#[derive(Properties, Clone, PartialEq, Deserialize)]
 pub struct Word {
     pub id: usize,
     pub word: String,
@@ -27,5 +29,61 @@ impl Word {
             entry_date: NaiveDate::parse_from_str("2011-11-11", "%Y-%m-%d").unwrap(),
             author: String::new(),
         }
+    }
+}
+
+#[derive(Properties, PartialEq)]
+pub struct WordProps {
+    pub word: Word,
+}
+
+#[function_component(WordComponent)]
+pub fn word_component(WordProps { word }: &WordProps) -> Html {
+    let toggle = use_bool_toggle(false);
+
+    let onclick = {
+        let toggle = toggle.clone();
+        Callback::from(move |_| toggle.toggle())
+    };
+
+    html! {
+        <>
+        <tr>
+            <td>
+                <button {onclick}>{ "Toggle" }</button>
+
+
+            </td>
+            <td>{word.word.clone()}</td>
+            if word.sounds_good {
+                <td class="affirmative">{""}</td>
+            } else {
+                <td class="negative">{""}</td>
+            }
+            if word.looks_good {
+                <td class="affirmative">{""}</td>
+            } else {
+                <td class="negative">{""}</td>
+            }
+            if word.means_good {
+                <td class="affirmative">{""}</td>
+            } else {
+                <td class="negative">{""}</td>
+            }
+            if word.overall_good {
+                <td class="affirmative">{""}</td>
+            } else {
+                <td class="negative">{""}</td>
+            }
+
+        </tr>
+
+        if *toggle {
+            <tr>
+                <td colspan=6>{word.comment.clone()}</td>
+            </tr>
+        }
+
+        </>
     }
 }

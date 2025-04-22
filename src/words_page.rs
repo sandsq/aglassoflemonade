@@ -61,7 +61,7 @@ pub fn words() -> Html {
             <title>{"words"}</title>
 
             <h1>{ "random selection of every word" }</h1>
-            <WordsList words={(*words).clone()} on_click={on_word_select.clone()} comment={detail} selected_word={selected_word.clone()} />
+            <WordsList words={(*words).clone()} />
             // {for details}
 
 
