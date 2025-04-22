@@ -2,6 +2,7 @@ mod word;
 mod word_details;
 mod words_list;
 mod words_list_header;
+mod sort_button;
 
 use gloo_net::http::Request;
 use yew::prelude::*;
