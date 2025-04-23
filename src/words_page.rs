@@ -1,6 +1,5 @@
 mod sort_button;
 mod word;
-mod word_details;
 mod words_list;
 mod words_list_header;
 

@@ -11,7 +11,7 @@ pub struct WordsListProps {
 
 #[function_component(WordsList)]
 pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
-    let selected_column = use_state(|| None);
+    let selected_column = use_state_eq(|| None);
 
     let on_column_select = {
         let selected_column = selected_column.clone();

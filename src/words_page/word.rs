@@ -46,6 +46,8 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
         Callback::from(move |_| toggle.toggle())
     };
 
+    let word_comment_class = if *toggle { "" } else { "hide_word_comment" };
+
     html! {
         <>
         <tr>
@@ -78,11 +80,11 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
 
         </tr>
 
-        if *toggle {
-            <tr>
+        // if *toggle {
+            <tr class={word_comment_class}>
                 <td colspan=6>{word.comment.clone()}</td>
             </tr>
-        }
+        // }
 
         </>
     }

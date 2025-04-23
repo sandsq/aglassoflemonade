@@ -40,6 +40,13 @@ td {
     border: $test_border_size solid black;
 }
 
+.hide_word_comment {
+    visibility: collapse;
+}
+/* .show_word_comment {
+    width: 50%;
+} */
+
 .affirmative {
     font-weight: bold;
     color: $blue2;

@@ -53,5 +53,16 @@
     "comment": "Despite sounding good (with similarities to words like 'sunder' and 'wander'), using good letters ('s', 'ond'), and having a meaning that I resonate with, the fact that this word was manufactured sours it. I need like 50 more years to accept it.",
     "entry_date": "2025-04-21",
     "author": "me"
+  },
+  {
+    "id": 5,
+    "word": "placeholder",
+    "sounds_good": false,
+    "looks_good": false,
+    "means_good": true,
+    "overall_good": true,
+    "comment": "sometimes you don't got time to come up with a name",
+    "entry_date": "2025-04-22",
+    "author": "me"
   }
 ]
