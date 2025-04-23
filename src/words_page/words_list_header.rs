@@ -104,10 +104,8 @@ pub fn words_list_header(
     let on_filter_sounds_bad_click =
         create_on_click(on_click_sound.clone(), sound_filter, FilterState::OnlyFalse);
 
-
     html! {
         <tr>
-            <th></th>
                 <th>
                     {"word"}
                     <br />
@@ -123,6 +121,7 @@ pub fn words_list_header(
             <th>{"looks"}</th>
             <th>{"means"}</th>
             <th>{"overall"}</th>
+            <th></th>
         </tr>
     }
 }

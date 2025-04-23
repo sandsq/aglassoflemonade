@@ -36,6 +36,13 @@ table {
     width: 100%;
 }
 
+table tr:nth-child(4n - 2) td {
+    background-color: $bg1-color;
+}
+table tr:nth-child(4n - 1) td {
+    background-color: $bg1-color;
+}
+
 td {
     border: $test_border_size solid black;
 }

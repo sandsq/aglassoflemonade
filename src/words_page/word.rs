@@ -51,11 +51,7 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
     html! {
         <>
         <tr>
-            <td>
-                <button {onclick}>{ "Toggle" }</button>
 
-
-            </td>
             <td>{word.word.clone()}</td>
             if word.sounds_good {
                 <td class="affirmative">{""}</td>
@@ -77,6 +73,9 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
             } else {
                 <td class="negative">{""}</td>
             }
+            <td>
+                <button {onclick}>{ "more info" }</button>
+            </td>
 
         </tr>
 
