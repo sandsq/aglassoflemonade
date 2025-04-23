@@ -70,14 +70,14 @@ pub fn words_list_header(
     };
 
     let sounds_good_class = match sound_filter {
-        FilterState::All => "",
-        FilterState::OnlyTrue => "active_sort",
-        FilterState::OnlyFalse => "",
+        FilterState::All => "fa-solid fa-check",
+        FilterState::OnlyTrue => "active_sort fa-solid fa-check",
+        FilterState::OnlyFalse => "fa-solid fa-check",
     };
     let sounds_bad_class = match sound_filter {
-        FilterState::All => "",
-        FilterState::OnlyTrue => "",
-        FilterState::OnlyFalse => "active_sort",
+        FilterState::All => "fa-solid fa-xmark",
+        FilterState::OnlyTrue => "fa-solid fa-xmark",
+        FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
     };
 
     let sort_direction = sort_direction.clone();
@@ -106,6 +106,7 @@ pub fn words_list_header(
 
     html! {
         <tr>
+            <th></th>
                 <th>
                     {"word"}
                     <br />
@@ -115,13 +116,12 @@ pub fn words_list_header(
             <th>
                 {"sounds"}
                 <br />
-                <SortButton on_click={on_filter_sounds_good_click} content={"true"} css_class={sounds_good_class} />
-                <SortButton on_click={on_filter_sounds_bad_click} content={"false"} css_class={sounds_bad_class} />
+                <SortButton on_click={on_filter_sounds_good_click} content={""} css_class={sounds_good_class} />
+                <SortButton on_click={on_filter_sounds_bad_click} content={""} css_class={sounds_bad_class} />
             </th>
             <th>{"looks"}</th>
             <th>{"means"}</th>
             <th>{"overall"}</th>
-            <th></th>
         </tr>
     }
 }

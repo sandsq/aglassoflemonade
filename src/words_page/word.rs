@@ -47,11 +47,18 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
     };
 
     let word_comment_class = if *toggle { "" } else { "hide_word_comment" };
+    let expand_button_class = if *toggle {
+        "fa-angle-up fa-solid"
+    } else {
+        "fa-angle-down fa-solid"
+    };
 
     html! {
         <>
         <tr>
-
+            <td class="expand_toggle">
+                <button class={expand_button_class} {onclick}></button>
+            </td>
             <td>{word.word.clone()}</td>
             if word.sounds_good {
                 <td class="affirmative">{""}</td>
@@ -73,9 +80,7 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
             } else {
                 <td class="negative">{""}</td>
             }
-            <td>
-                <button {onclick}>{ "more info" }</button>
-            </td>
+
 
         </tr>
 

@@ -34,6 +34,17 @@ h1 {
 
 table {
     width: 100%;
+
+    tr {
+        td {
+            border: $test_border_size solid black;
+        }
+    }
+}
+
+.expand_toggle {
+    width: 1%; /* Force minimum width */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 table tr:nth-child(4n - 2) td {
@@ -43,23 +54,18 @@ table tr:nth-child(4n - 1) td {
     background-color: $bg1-color;
 }
 
-td {
-    border: $test_border_size solid black;
-}
-
 .hide_word_comment {
     visibility: collapse;
 }
-/* .show_word_comment {
-    width: 50%;
-} */
 
 .affirmative {
+    width: 15%;
     font-weight: bold;
     color: $blue2;
 }
 
 .negative {
+    width: 15%;
     font-weight: bold;
     color: $purple2;
 }

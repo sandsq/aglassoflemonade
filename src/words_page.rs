@@ -34,7 +34,7 @@ pub fn words() -> Html {
         <div>
             <title>{"words"}</title>
 
-            <h1>{ "random selection from all words" }</h1>
+            <h1>{ "random selection of all words" }</h1>
             <WordsList words={(*words).clone()} />
 
 
