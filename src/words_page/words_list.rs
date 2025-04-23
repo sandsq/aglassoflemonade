@@ -34,6 +34,17 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
         Some(i) => *i,
     };
 
+    let selected_column3 = use_state(|| None);
+    let on_column_select_look = {
+        let selected_column3 = selected_column3.clone();
+        Callback::from(move |b: FilterState| selected_column3.set(Some(b)))
+    };
+    let look_filter = selected_column3.as_ref().map(|b| b);
+    let look_filter = match look_filter {
+        None => FilterState::All,
+        Some(i) => *i,
+    };
+
     let words = words.clone();
     let mut words = words
         .iter()
@@ -41,6 +52,11 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
             FilterState::All => true,
             FilterState::OnlyTrue => a.sounds_good,
             FilterState::OnlyFalse => !a.sounds_good,
+        })
+        .filter(|&a| match look_filter {
+            FilterState::All => true,
+            FilterState::OnlyTrue => a.looks_good,
+            FilterState::OnlyFalse => !a.looks_good,
         })
         .cloned()
         .collect::<Vec<Word>>();
@@ -59,7 +75,7 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
     html! {
 
         <table>
-            <WordsListHeader on_click={on_column_select.clone()} sort_direction={sort_direction} on_click_sound={on_column_select_sound} sound_filter={sound_filter}/>
+            <WordsListHeader on_click={on_column_select.clone()} sort_direction={sort_direction} on_sound_good_click={on_column_select_sound} sound_filter={sound_filter} on_look_good_click={on_column_select_look} look_filter={look_filter} />
         {
             words
             .iter()

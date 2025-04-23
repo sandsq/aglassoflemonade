@@ -43,8 +43,9 @@ table {
 }
 
 .expand_toggle {
-    width: 1%; /* Force minimum width */
+    width: 3%; /* Force minimum width */
     white-space: nowrap; /* Prevent wrapping */
+    text-align: center;
 }
 
 table tr:nth-child(4n - 2) td {
@@ -56,6 +57,14 @@ table tr:nth-child(4n - 1) td {
 
 .hide_word_comment {
     visibility: collapse;
+}
+
+.dummy_row {
+    visibility: collapse;
+}
+
+.word {
+    width: 37%;
 }
 
 .affirmative {

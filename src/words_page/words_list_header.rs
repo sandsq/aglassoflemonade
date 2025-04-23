@@ -27,8 +27,10 @@ impl Default for FilterState {
 pub struct AlphaProps {
     pub on_click: Callback<SortDirection>,
     pub sort_direction: SortDirection,
-    pub on_click_sound: Callback<FilterState>,
+    pub on_sound_good_click: Callback<FilterState>,
     pub sound_filter: FilterState,
+    pub on_look_good_click: Callback<FilterState>,
+    pub look_filter: FilterState,
 }
 
 pub fn create_on_click(
@@ -54,8 +56,10 @@ pub fn words_list_header(
     AlphaProps {
         on_click,
         sort_direction,
-        on_click_sound,
+        on_sound_good_click,
         sound_filter,
+        on_look_good_click,
+        look_filter,
     }: &AlphaProps,
 ) -> Html {
     let abc_sort_class = match sort_direction {
@@ -80,6 +84,17 @@ pub fn words_list_header(
         FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
     };
 
+    let looks_good_class = match look_filter {
+        FilterState::All => "fa-solid fa-check",
+        FilterState::OnlyTrue => "active_sort fa-solid fa-check",
+        FilterState::OnlyFalse => "fa-solid fa-check",
+    };
+    let looks_bad_class = match look_filter {
+        FilterState::All => "fa-solid fa-xmark",
+        FilterState::OnlyTrue => "fa-solid fa-xmark",
+        FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
+    };
+
     let sort_direction = sort_direction.clone();
     let on_click = on_click.clone();
     let on_sort_abc_click = {
@@ -98,13 +113,31 @@ pub fn words_list_header(
     };
 
     let sound_filter = sound_filter.clone();
-    let on_filter_sounds_good_click =
-        create_on_click(on_click_sound.clone(), sound_filter, FilterState::OnlyTrue);
+    let on_filter_sounds_good_click = create_on_click(
+        on_sound_good_click.clone(),
+        sound_filter,
+        FilterState::OnlyTrue,
+    );
+    let on_filter_sounds_bad_click = create_on_click(
+        on_sound_good_click.clone(),
+        sound_filter,
+        FilterState::OnlyFalse,
+    );
 
-    let on_filter_sounds_bad_click =
-        create_on_click(on_click_sound.clone(), sound_filter, FilterState::OnlyFalse);
+    let look_filter = look_filter.clone();
+    let on_filter_looks_good_click = create_on_click(
+        on_look_good_click.clone(),
+        look_filter,
+        FilterState::OnlyTrue,
+    );
+    let on_filter_looks_bad_click = create_on_click(
+        on_look_good_click.clone(),
+        look_filter,
+        FilterState::OnlyFalse,
+    );
 
     html! {
+        <>
         <tr>
             <th></th>
                 <th>
@@ -119,9 +152,24 @@ pub fn words_list_header(
                 <SortButton on_click={on_filter_sounds_good_click} content={""} css_class={sounds_good_class} />
                 <SortButton on_click={on_filter_sounds_bad_click} content={""} css_class={sounds_bad_class} />
             </th>
-            <th>{"looks"}</th>
+            <th>
+                {"looks"}
+                <br />
+                <SortButton on_click={on_filter_looks_good_click} content={""} css_class={looks_good_class} />
+                <SortButton on_click={on_filter_looks_bad_click} content={""} css_class={looks_bad_class} />
+            </th>
             <th>{"means"}</th>
             <th>{"overall"}</th>
         </tr>
+
+        <tr class="dummy_row">
+            <td class="expand_toggle"></td>
+            <td class="word"></td>
+            <td class="affirmative"></td>
+            <td class="affirmative"></td>
+            <td class="affirmative"></td>
+            <td class="affirmative"></td>
+        </tr>
+        </>
     }
 }

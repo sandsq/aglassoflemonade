@@ -59,7 +59,7 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
             <td class="expand_toggle">
                 <button class={expand_button_class} {onclick}></button>
             </td>
-            <td>{word.word.clone()}</td>
+            <td class="word">{word.word.clone()}</td>
             if word.sounds_good {
                 <td class="affirmative">{""}</td>
             } else {
