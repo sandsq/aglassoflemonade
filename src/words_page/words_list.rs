@@ -11,14 +11,24 @@ pub struct WordsListProps {
 
 #[function_component(WordsList)]
 pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
-    let selected_column = use_state_eq(|| None);
-
+    let selected_column = use_state(|| None);
     let on_column_select = {
         let selected_column = selected_column.clone();
         Callback::from(move |b: SortDirection| selected_column.set(Some(b)))
     };
     let sort_direction = selected_column.as_ref().map(|b| b);
     let sort_direction = match sort_direction {
+        None => SortDirection::Unchanged,
+        Some(i) => *i,
+    };
+
+    let select_column_date = use_state(|| None);
+    let on_date_column_select = {
+        let select_column_date = select_column_date.clone();
+        Callback::from(move |b: SortDirection| select_column_date.set(Some(b)))
+    };
+    let date_direction = select_column_date.as_ref().map(|b| b);
+    let date_direction = match date_direction {
         None => SortDirection::Unchanged,
         Some(i) => *i,
     };
@@ -92,7 +102,7 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
         })
         .cloned()
         .collect::<Vec<Word>>();
-    let words = match sort_direction {
+    let mut words = match sort_direction {
         SortDirection::Unchanged => words,
         SortDirection::Abc => {
             words.sort_by(|a, b| a.word.cmp(&b.word));
@@ -103,11 +113,22 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
             words
         }
     };
+    let words = match date_direction {
+        SortDirection::Unchanged => words,
+        SortDirection::Abc => {
+            words.sort_by(|a, b| a.entry_date.cmp(&b.entry_date));
+            words
+        }
+        SortDirection::Zyx => {
+            words.sort_by(|a, b| b.entry_date.cmp(&a.entry_date));
+            words
+        }
+    };
 
     html! {
 
         <table>
-            <WordsListHeader on_click={on_column_select.clone()} sort_direction={sort_direction} on_sound_good_click={on_column_select_sound} sound_filter={sound_filter} on_look_good_click={on_column_select_look} look_filter={look_filter} on_means_good_click={on_column_select_means} means_filter={means_filter} on_overall_good_click={on_column_select_overall} overall_filter={overall_filter} />
+            <WordsListHeader on_click={on_column_select} sort_direction={sort_direction} on_date_click={on_date_column_select} date_sort_direction={date_direction} on_sound_good_click={on_column_select_sound} sound_filter={sound_filter} on_look_good_click={on_column_select_look} look_filter={look_filter} on_means_good_click={on_column_select_means} means_filter={means_filter} on_overall_good_click={on_column_select_overall} overall_filter={overall_filter} />
         {
             words
             .iter()

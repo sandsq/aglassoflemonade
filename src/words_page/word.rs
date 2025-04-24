@@ -46,12 +46,17 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
         Callback::from(move |_| toggle.toggle())
     };
 
-    let word_comment_class = if *toggle { "word_comment" } else { "hide_word_comment" };
+    let word_comment_class = if *toggle {
+        "word_comment"
+    } else {
+        "hide_word_comment"
+    };
     let expand_button_class = if *toggle {
         "fa-angle-up fa-solid"
     } else {
         "fa-angle-down fa-solid"
     };
+    let entry_date = format!("{}", word.entry_date.clone().format("%Y %b %d"));
 
     html! {
         <>
@@ -60,6 +65,7 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
                 <button class={expand_button_class} {onclick}></button>
             </td>
             <td class="word">{word.word.clone()}</td>
+            <td class="date">{entry_date}</td>
             if word.sounds_good {
                 <td class="affirmative border_left">{""}</td>
             } else {

@@ -27,6 +27,8 @@ impl Default for FilterState {
 pub struct AlphaProps {
     pub on_click: Callback<SortDirection>,
     pub sort_direction: SortDirection,
+    pub on_date_click: Callback<SortDirection>,
+    pub date_sort_direction: SortDirection,
     pub on_sound_good_click: Callback<FilterState>,
     pub sound_filter: FilterState,
     pub on_look_good_click: Callback<FilterState>,
@@ -60,6 +62,8 @@ pub fn words_list_header(
     AlphaProps {
         on_click,
         sort_direction,
+        date_sort_direction,
+        on_date_click,
         on_sound_good_click,
         sound_filter,
         on_look_good_click,
@@ -76,6 +80,16 @@ pub fn words_list_header(
         SortDirection::Zyx => "",
     };
     let zyx_sort_class = match sort_direction {
+        SortDirection::Unchanged => "",
+        SortDirection::Abc => "",
+        SortDirection::Zyx => "active_sort",
+    };
+    let asc_date_sort_class = match date_sort_direction {
+        SortDirection::Unchanged => "",
+        SortDirection::Abc => "active_sort",
+        SortDirection::Zyx => "",
+    };
+    let desc_date_sort_class = match date_sort_direction {
         SortDirection::Unchanged => "",
         SortDirection::Abc => "",
         SortDirection::Zyx => "active_sort",
@@ -102,7 +116,6 @@ pub fn words_list_header(
         FilterState::OnlyTrue => "fa-solid fa-xmark",
         FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
     };
-    
 
     let means_good_class = match means_filter {
         FilterState::All => "fa-solid fa-check",
@@ -114,7 +127,7 @@ pub fn words_list_header(
         FilterState::OnlyTrue => "fa-solid fa-xmark",
         FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
     };
-    
+
     let overall_good_class = match overall_filter {
         FilterState::All => "fa-solid fa-check",
         FilterState::OnlyTrue => "active_sort fa-solid fa-check",
@@ -125,7 +138,6 @@ pub fn words_list_header(
         FilterState::OnlyTrue => "fa-solid fa-xmark",
         FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
     };
-    
 
     let sort_direction = sort_direction.clone();
     let on_click = on_click.clone();
@@ -141,6 +153,23 @@ pub fn words_list_header(
         Callback::from(move |_| match sort_direction {
             SortDirection::Zyx => on_click.emit(SortDirection::Unchanged),
             _ => on_click.emit(SortDirection::Zyx),
+        })
+    };
+
+    let date_sort_direction = date_sort_direction.clone();
+    let on_date_click = on_date_click.clone();
+    let on_sort_date_asc_click = {
+        let on_date_click = on_date_click.clone();
+        Callback::from(move |_| match date_sort_direction {
+            SortDirection::Abc => on_date_click.emit(SortDirection::Unchanged),
+            _ => on_date_click.emit(SortDirection::Abc),
+        })
+    };
+    let on_sort_date_desc_click = {
+        let on_date_click = on_date_click.clone();
+        Callback::from(move |_| match date_sort_direction {
+            SortDirection::Zyx => on_date_click.emit(SortDirection::Unchanged),
+            _ => on_date_click.emit(SortDirection::Zyx),
         })
     };
 
@@ -178,7 +207,7 @@ pub fn words_list_header(
         means_filter,
         FilterState::OnlyFalse,
     );
-    
+
     let overall_filter = overall_filter.clone();
     let on_filter_overall_good_click = create_on_click(
         on_overall_good_click.clone(),
@@ -190,18 +219,7 @@ pub fn words_list_header(
         overall_filter,
         FilterState::OnlyFalse,
     );
-    
-    let overall_good_class = match overall_filter {
-        FilterState::All => "fa-solid fa-check",
-        FilterState::OnlyTrue => "active_sort fa-solid fa-check",
-        FilterState::OnlyFalse => "fa-solid fa-check",
-    };
-    let overall_bad_class = match overall_filter {
-        FilterState::All => "fa-solid fa-xmark",
-        FilterState::OnlyTrue => "fa-solid fa-xmark",
-        FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
-    };
-    
+
     html! {
         <>
         <tr class="border_top_bottom">
@@ -211,6 +229,12 @@ pub fn words_list_header(
                 <br />
                 <SortButton on_click={on_sort_abc_click} content={"abc"} css_class={abc_sort_class} />
                 <SortButton on_click={on_sort_zyx_click} content={"zyx"} css_class={zyx_sort_class} />
+            </th>
+            <th>
+                {"date"}
+                <br />
+                <SortButton on_click={on_sort_date_asc_click} content={"asc"} css_class={asc_date_sort_class} />
+                <SortButton on_click={on_sort_date_desc_click} content={"desc"} css_class={desc_date_sort_class} />
             </th>
             <th class="border_left">
                 {"sounds"}

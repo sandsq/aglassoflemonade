@@ -14,8 +14,8 @@ body {
 }
 
 .main_container {
-    width: 40%;
-    margin-top: 4rem;
+    width: 50%;
+    margin-top: 3rem;
     margin-left: auto;
     margin-right: auto;
     border: $test_border_size solid $fg_color;
@@ -31,8 +31,13 @@ body {
 
 h1 {
     text-align: left;
-    font-size: 36px;
+    font-size: 40px;
     /* border-bottom: 10px double $fg_color; */
+}
+
+h2 {
+    font-size: 30px;
+    border-bottom: 5px double $fg_color;
 }
 
 table {
@@ -76,8 +81,12 @@ table tr:nth-child(4n) td {
 }
 
 .word {
-    width: 37%;
+    width: 25%;
     text-align: center;
+}
+
+.date {
+    width: 15%;
 }
 
 .affirmative {
