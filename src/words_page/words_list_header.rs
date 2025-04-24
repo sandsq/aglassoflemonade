@@ -31,6 +31,10 @@ pub struct AlphaProps {
     pub sound_filter: FilterState,
     pub on_look_good_click: Callback<FilterState>,
     pub look_filter: FilterState,
+    pub on_means_good_click: Callback<FilterState>,
+    pub means_filter: FilterState,
+    pub on_overall_good_click: Callback<FilterState>,
+    pub overall_filter: FilterState,
 }
 
 pub fn create_on_click(
@@ -60,6 +64,10 @@ pub fn words_list_header(
         sound_filter,
         on_look_good_click,
         look_filter,
+        on_means_good_click,
+        means_filter,
+        on_overall_good_click,
+        overall_filter,
     }: &AlphaProps,
 ) -> Html {
     let abc_sort_class = match sort_direction {
@@ -94,6 +102,30 @@ pub fn words_list_header(
         FilterState::OnlyTrue => "fa-solid fa-xmark",
         FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
     };
+    
+
+    let means_good_class = match means_filter {
+        FilterState::All => "fa-solid fa-check",
+        FilterState::OnlyTrue => "active_sort fa-solid fa-check",
+        FilterState::OnlyFalse => "fa-solid fa-check",
+    };
+    let means_bad_class = match means_filter {
+        FilterState::All => "fa-solid fa-xmark",
+        FilterState::OnlyTrue => "fa-solid fa-xmark",
+        FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
+    };
+    
+    let overall_good_class = match overall_filter {
+        FilterState::All => "fa-solid fa-check",
+        FilterState::OnlyTrue => "active_sort fa-solid fa-check",
+        FilterState::OnlyFalse => "fa-solid fa-check",
+    };
+    let overall_bad_class = match overall_filter {
+        FilterState::All => "fa-solid fa-xmark",
+        FilterState::OnlyTrue => "fa-solid fa-xmark",
+        FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
+    };
+    
 
     let sort_direction = sort_direction.clone();
     let on_click = on_click.clone();
@@ -135,7 +167,41 @@ pub fn words_list_header(
         look_filter,
         FilterState::OnlyFalse,
     );
-
+    let means_filter = means_filter.clone();
+    let on_filter_means_good_click = create_on_click(
+        on_means_good_click.clone(),
+        means_filter,
+        FilterState::OnlyTrue,
+    );
+    let on_filter_means_bad_click = create_on_click(
+        on_means_good_click.clone(),
+        means_filter,
+        FilterState::OnlyFalse,
+    );
+    
+    let overall_filter = overall_filter.clone();
+    let on_filter_overall_good_click = create_on_click(
+        on_overall_good_click.clone(),
+        overall_filter,
+        FilterState::OnlyTrue,
+    );
+    let on_filter_overall_bad_click = create_on_click(
+        on_overall_good_click.clone(),
+        overall_filter,
+        FilterState::OnlyFalse,
+    );
+    
+    let overall_good_class = match overall_filter {
+        FilterState::All => "fa-solid fa-check",
+        FilterState::OnlyTrue => "active_sort fa-solid fa-check",
+        FilterState::OnlyFalse => "fa-solid fa-check",
+    };
+    let overall_bad_class = match overall_filter {
+        FilterState::All => "fa-solid fa-xmark",
+        FilterState::OnlyTrue => "fa-solid fa-xmark",
+        FilterState::OnlyFalse => "active_sort fa-solid fa-xmark",
+    };
+    
     html! {
         <>
         <tr class="border_top_bottom">
@@ -158,8 +224,18 @@ pub fn words_list_header(
                 <SortButton on_click={on_filter_looks_good_click} content={""} css_class={looks_good_class} />
                 <SortButton on_click={on_filter_looks_bad_click} content={""} css_class={looks_bad_class} />
             </th>
-            <th>{"means"}</th>
-            <th class="border_left">{"overall"}</th>
+            <th>
+                {"means"}
+                <br />
+                <SortButton on_click={on_filter_means_good_click} content={""} css_class={means_good_class} />
+                <SortButton on_click={on_filter_means_bad_click} content={""} css_class={means_bad_class} />
+            </th>
+            <th class="border_left">
+                {"overall"}
+                <br />
+                <SortButton on_click={on_filter_overall_good_click} content={""} css_class={overall_good_class} />
+                <SortButton on_click={on_filter_overall_bad_click} content={""} css_class={overall_bad_class} />
+            </th>
         </tr>
 
         // need two dummy rows for the alternate coloring to work because the detail toggle is a hidden row
