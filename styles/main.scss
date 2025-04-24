@@ -5,7 +5,7 @@
 html {
     font-family: "Ubuntu Mono", FontAwesome;
     font-size: $font_size;
-    border-top: 10px solid $blue2;
+    border-top: 5px solid $blue2;
 }
 
 body {
@@ -14,7 +14,8 @@ body {
 }
 
 .main_container {
-    width: 50%;
+    width: 40%;
+    margin-top: 4rem;
     margin-left: auto;
     margin-right: auto;
     border: $test_border_size solid $fg_color;
@@ -31,12 +32,13 @@ body {
 h1 {
     text-align: left;
     font-size: 36px;
+    /* border-bottom: 10px double $fg_color; */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    border-bottom: 2px solid $fg_color;
+    border-bottom: 2px solid $fg4_color;
     tr {
         th {
             padding: 3px 0px 3px 0px;
@@ -51,8 +53,8 @@ table {
 .expand_toggle {
     width: 3%; /* Force minimum width */
     white-space: nowrap; /* Prevent wrapping */
-    text-align: center;
-    padding-bottom: 3px;
+    text-align: left;
+    padding-bottom: 5px;
 }
 
 table tr:nth-child(4n - 3) td {
@@ -62,6 +64,9 @@ table tr:nth-child(4n) td {
     background-color: $bg1-color;
 }
 
+.word_comment td {
+    padding-left: 2rem;
+}
 .hide_word_comment {
     visibility: collapse;
 }
@@ -90,12 +95,12 @@ table tr:nth-child(4n) td {
 }
 
 .border_left {
-    border-left: 2px solid $fg_color;
+    border-left: 2px solid $fg4_color;
 }
 
 .border_top_bottom {
-    border-top: 2px solid $fg_color;
-    border-bottom: 2px solid $fg_color;
+    border-top: 2px solid $fg4_color;
+    border-bottom: 2px solid $fg4_color;
 }
 
 .active_sort {
