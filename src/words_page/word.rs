@@ -35,10 +35,16 @@ pub struct Word {
 #[derive(Properties, PartialEq)]
 pub struct WordProps {
     pub word: Word,
+    pub is_detail_expanded: Option<bool>,
 }
 
 #[function_component(WordComponent)]
-pub fn word_component(WordProps { word }: &WordProps) -> Html {
+pub fn word_component(
+    WordProps {
+        word,
+        is_detail_expanded,
+    }: &WordProps,
+) -> Html {
     let toggle = use_bool_toggle(false);
 
     let onclick = {
@@ -46,16 +52,33 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
         Callback::from(move |_| toggle.toggle())
     };
 
-    let word_comment_class = if *toggle {
-        "word_comment"
-    } else {
-        "hide_word_comment"
+    let word_comment_class = match is_detail_expanded {
+        None => match *toggle {
+            true => "word_comment",
+            false => "hide_word_comment",
+        },
+        Some(i) => match i {
+            true => "word_comment",
+            false => "hide_word_comment",
+        },
     };
-    let expand_button_class = if *toggle {
-        "fa-angle-up fa-solid"
-    } else {
-        "fa-angle-down fa-solid"
+
+    //     if *toggle {
+    //     "word_comment"
+    // } else {
+    //     "hide_word_comment"
+    // };
+    let expand_button_class = match is_detail_expanded {
+        None => match *toggle {
+            true => "fa-angle-up fa-solid",
+            false => "fa-angle-down fa-solid",
+        },
+        Some(i) => match i {
+            true => "fa-angle-up fa-solid",
+            false => "fa-angle-down fa-solid",
+        },
     };
+
     let entry_date = format!("{}", word.entry_date.clone().format("%Y %b %d"));
 
     html! {
