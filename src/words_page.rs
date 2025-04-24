@@ -32,9 +32,9 @@ pub fn words() -> Html {
 
     html! {
         <div>
-            <title>{"words"}</title>
+            <title>{"wordex"}</title>
 
-            <h1>{ "random selection of all words" }</h1>
+            <h1>{ "wordex" }</h1>
             <WordsList words={(*words).clone()} />
 
 

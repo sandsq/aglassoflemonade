@@ -138,15 +138,15 @@ pub fn words_list_header(
 
     html! {
         <>
-        <tr>
+        <tr class="border_top_bottom">
             <th></th>
-                <th>
-                    {"word"}
-                    <br />
-                    <SortButton on_click={on_sort_abc_click} content={"abc"} css_class={abc_sort_class} />
-                    <SortButton on_click={on_sort_zyx_click} content={"zyx"} css_class={zyx_sort_class} />
-                </th>
             <th>
+                {"word"}
+                <br />
+                <SortButton on_click={on_sort_abc_click} content={"abc"} css_class={abc_sort_class} />
+                <SortButton on_click={on_sort_zyx_click} content={"zyx"} css_class={zyx_sort_class} />
+            </th>
+            <th class="border_left">
                 {"sounds"}
                 <br />
                 <SortButton on_click={on_filter_sounds_good_click} content={""} css_class={sounds_good_class} />
@@ -159,9 +159,18 @@ pub fn words_list_header(
                 <SortButton on_click={on_filter_looks_bad_click} content={""} css_class={looks_bad_class} />
             </th>
             <th>{"means"}</th>
-            <th>{"overall"}</th>
+            <th class="border_left">{"overall"}</th>
         </tr>
 
+        // need two dummy rows for the alternate coloring to work because the detail toggle is a hidden row
+        <tr class="dummy_row">
+            <td class="expand_toggle"></td>
+            <td class="word"></td>
+            <td class="affirmative"></td>
+            <td class="affirmative"></td>
+            <td class="affirmative"></td>
+            <td class="affirmative"></td>
+        </tr>
         <tr class="dummy_row">
             <td class="expand_toggle"></td>
             <td class="word"></td>

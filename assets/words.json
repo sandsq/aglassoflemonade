@@ -49,7 +49,7 @@
     "sounds_good": true,
     "looks_good": true,
     "means_good": true,
-    "overall_good": true,
+    "overall_good": false,
     "comment": "Despite sounding good (with similarities to words like 'sunder' and 'wander'), using good letters ('s', 'ond'), and having a meaning that I resonate with, the fact that this word was manufactured sours it. I need like 50 more years to accept it.",
     "entry_date": "2025-04-21",
     "author": "me"
@@ -63,6 +63,28 @@
     "overall_good": true,
     "comment": "sometimes you don't got time to come up with a name",
     "entry_date": "2025-04-22",
+    "author": "me"
+  },
+  {
+    "id": 6,
+    "word": "aphid",
+    "sounds_good": true,
+    "looks_good": true,
+    "means_good": false,
+    "overall_good": true,
+    "comment": "Suggested by my friend who was looking for cool 5 letter words for wordle.",
+    "entry_date": "2025-04-23",
+    "author": "me"
+  },
+  {
+    "id": 7,
+    "word": "vinyl",
+    "sounds_good": true,
+    "looks_good": true,
+    "means_good": true,
+    "overall_good": true,
+    "comment": "'yl' and 'nyl' are cool letter sequences, many sounds containing 'v' are good, and vinyl is a cool retro medium. Suggested by my friend who was looking for cool 5 letter words for wordle.",
+    "entry_date": "2025-04-23",
     "author": "me"
   }
 ]

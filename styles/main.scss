@@ -15,7 +15,8 @@ body {
 
 .main_container {
     width: 50%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     border: $test_border_size solid $fg_color;
 }
 
@@ -28,16 +29,21 @@ body {
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
     font-size: 36px;
 }
 
 table {
     width: 100%;
-
+    border-collapse: collapse;
+    border-bottom: 2px solid $fg_color;
     tr {
+        th {
+            padding: 3px 0px 3px 0px;
+        }
         td {
             border: $test_border_size solid black;
+            padding: 3px 0px 3px 0px;
         }
     }
 }
@@ -46,12 +52,13 @@ table {
     width: 3%; /* Force minimum width */
     white-space: nowrap; /* Prevent wrapping */
     text-align: center;
+    padding-bottom: 3px;
 }
 
-table tr:nth-child(4n - 2) td {
+table tr:nth-child(4n - 3) td {
     background-color: $bg1-color;
 }
-table tr:nth-child(4n - 1) td {
+table tr:nth-child(4n) td {
     background-color: $bg1-color;
 }
 
@@ -65,18 +72,30 @@ table tr:nth-child(4n - 1) td {
 
 .word {
     width: 37%;
+    text-align: center;
 }
 
 .affirmative {
     width: 15%;
+    text-align: center;
     font-weight: bold;
     color: $blue2;
 }
 
 .negative {
     width: 15%;
+    text-align: center;
     font-weight: bold;
     color: $purple2;
+}
+
+.border_left {
+    border-left: 2px solid $fg_color;
+}
+
+.border_top_bottom {
+    border-top: 2px solid $fg_color;
+    border-bottom: 2px solid $fg_color;
 }
 
 .active_sort {

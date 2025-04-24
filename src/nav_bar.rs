@@ -13,8 +13,8 @@ pub fn nav_bar() -> Html {
             <nav class="nav-main">
             <ul>
                 <li class="hvr-underline-reveal"><Link<Route> to={Route::Home}>{ "home" }</Link<Route>></li>
-                <li class="hvr-underline-reveal"><Link<Route> to={Route::Thoughts}>{ "every thought" }</Link<Route>></li>
-                <li class="hvr-underline-reveal"><Link<Route> to={Route::Words}>{ "every word" }</Link<Route>></li>
+                // <li class="hvr-underline-reveal"><Link<Route> to={Route::Thoughts}>{ "every thought" }</Link<Route>></li>
+                <li class="hvr-underline-reveal"><Link<Route> to={Route::Words}>{ "wordex" }</Link<Route>></li>
                 <li class="hvr-underline-reveal"><Link<Route> to={Route::About}>{ "about" }</Link<Route>></li>
             </ul>
             </nav>

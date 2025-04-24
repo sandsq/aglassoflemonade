@@ -61,9 +61,9 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
             </td>
             <td class="word">{word.word.clone()}</td>
             if word.sounds_good {
-                <td class="affirmative">{""}</td>
+                <td class="affirmative border_left">{""}</td>
             } else {
-                <td class="negative">{""}</td>
+                <td class="negative border_left">{""}</td>
             }
             if word.looks_good {
                 <td class="affirmative">{""}</td>
@@ -76,9 +76,9 @@ pub fn word_component(WordProps { word }: &WordProps) -> Html {
                 <td class="negative">{""}</td>
             }
             if word.overall_good {
-                <td class="affirmative">{""}</td>
+                <td class="affirmative border_left">{""}</td>
             } else {
-                <td class="negative">{""}</td>
+                <td class="negative border_left">{""}</td>
             }
 
 
