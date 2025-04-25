@@ -71,6 +71,7 @@ table tr:nth-child(4n) td {
 
 .word_comment td {
     padding-left: 2rem;
+    visibility: visible;
 }
 .hide_word_comment {
     visibility: collapse;

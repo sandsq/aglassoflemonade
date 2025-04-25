@@ -35,49 +35,54 @@ pub struct Word {
 #[derive(Properties, PartialEq)]
 pub struct WordProps {
     pub word: Word,
-    pub is_detail_expanded: Option<bool>,
+    // pub is_detail_expanded: bool,
 }
 
 #[function_component(WordComponent)]
 pub fn word_component(
     WordProps {
         word,
-        is_detail_expanded,
+        // is_detail_expanded,
     }: &WordProps,
 ) -> Html {
     let toggle = use_bool_toggle(false);
 
     let onclick = {
         let toggle = toggle.clone();
-        Callback::from(move |_| toggle.toggle())
+        Callback::from(move |_| {
+            toggle.toggle();
+        })
     };
 
-    let word_comment_class = match is_detail_expanded {
-        None => match *toggle {
-            true => "word_comment",
-            false => "hide_word_comment",
-        },
-        Some(i) => match i {
-            true => "word_comment",
-            false => "hide_word_comment",
-        },
+    let word_comment_class = match *toggle {
+        true => "word_comment",
+        false => "hide_word_comment",
     };
-
-    //     if *toggle {
-    //     "word_comment"
-    // } else {
-    //     "hide_word_comment"
+    //     match is_detail_expanded {
+    //     None => match *toggle {
+    //         true => "word_comment",
+    //         false => "hide_word_comment",
+    //     },
+    //     Some(i) => match i {
+    //         true => "word_comment",
+    //         false => "hide_word_comment",
+    //     },
     // };
-    let expand_button_class = match is_detail_expanded {
-        None => match *toggle {
-            true => "fa-angle-up fa-solid",
-            false => "fa-angle-down fa-solid",
-        },
-        Some(i) => match i {
-            true => "fa-angle-up fa-solid",
-            false => "fa-angle-down fa-solid",
-        },
+
+    let expand_button_class = match *toggle {
+        true => "fa-angle-up fa-solid",
+        false => "fa-angle-down fa-solid",
     };
+    // let expand_button_class = match is_detail_expanded {
+    //     None => match *toggle {
+    //         true => "fa-angle-up fa-solid",
+    //         false => "fa-angle-down fa-solid",
+    //     },
+    //     Some(i) => match i {
+    //         true => "fa-angle-up fa-solid",
+    //         false => "fa-angle-down fa-solid",
+    //     },
+    // };
 
     let entry_date = format!("{}", word.entry_date.clone().format("%Y %b %d"));
 
@@ -115,7 +120,7 @@ pub fn word_component(
 
         // if *toggle {
             <tr class={word_comment_class}>
-                <td colspan=6>{word.comment.clone()}</td>
+                <td colspan=7>{word.comment.clone()}</td>
             </tr>
         // }
 

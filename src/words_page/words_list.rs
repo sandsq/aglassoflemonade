@@ -1,4 +1,3 @@
-use log::debug;
 use yew::prelude::*;
 
 use crate::words_page::words_list_header::{FilterState, SortDirection, WordsListHeader};
@@ -141,19 +140,19 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
     //     Some(i) => Some(i),
     // };
 
-    let is_detail_expanded = use_state(|| None);
-    // let on_expand_click = on_expand_click.clone();
-    let on_expand_all_click = {
-        let is_detail_expanded = is_detail_expanded.clone();
-        Callback::from(move |_| {
-            is_detail_expanded.set(Some(true));
-        })
-    };
+    // let is_detail_expanded = use_state(|| false);
+    // // let on_expand_click = on_expand_click.clone();
+    // let on_expand_all_click = {
+    //     let is_detail_expanded = is_detail_expanded.clone();
+    //     Callback::from(move |_| {
+    //         is_detail_expanded.set(true);
+    //     })
+    // };
 
     html! {
 
         <>
-        <button onclick={on_expand_all_click}>{"expand all"}</button>
+        // <button onclick={on_expand_all_click}>{"expand all"}</button>
 
         <table>
             <WordsListHeader on_click={on_column_select} sort_direction={sort_direction} on_date_click={on_date_column_select} date_sort_direction={date_direction} on_sound_good_click={on_column_select_sound} sound_filter={sound_filter} on_look_good_click={on_column_select_look} look_filter={look_filter} on_means_good_click={on_column_select_means} means_filter={means_filter} on_overall_good_click={on_column_select_overall} overall_filter={overall_filter} />
@@ -164,7 +163,7 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
                 html! {
                 <WordComponent
                     word={(*word).clone()}
-                    is_detail_expanded={*is_detail_expanded}
+                    // is_detail_expanded={*is_detail_expanded.clone()}
                 />
                 }
             }).collect::<Html>()
