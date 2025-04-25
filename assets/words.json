@@ -369,7 +369,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "'prot' is good.",
     "entry_date": "2024-03-25",
     "author": "me"
   },
@@ -380,7 +380,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "Friend's wordle word.",
+    "comment": "Fluid dynamics makes fluid cool. Plus fluid movements are elegant. 'ui' sequences are generally good, as are 'fl'.  Friend's wordle word.",
     "entry_date": "2022-01-25",
     "author": "me"
   },
@@ -391,7 +391,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "Friend's wordle word.",
+    "comment": "Pomerful. Friend's wordle word.",
     "entry_date": "2024-01-25",
     "author": "me"
   },
@@ -400,9 +400,9 @@
     "word": "rowan",
     "sounds_good": true,
     "looks_good": true,
-    "means_good": true,
+    "means_good": false,
     "overall_good": true,
-    "comment": "Friend's wordle word.",
+    "comment": "I don't have investment in any rowans, neither things nor people named Rowan. Friend's wordle word.",
     "entry_date": "2024-01-25",
     "author": "me"
   },
@@ -413,7 +413,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "Friend's wordle word.",
+    "comment": "'dr' good. Dreams good. Friend's wordle word.",
     "entry_date": "2024-01-25",
     "author": "me"
   }
