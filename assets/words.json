@@ -202,9 +202,9 @@
     "word": "supersonic",
     "sounds_good": true,
     "looks_good": true,
-    "means_good": true,
+    "means_good": false,
     "overall_good": true,
-    "comment": "'supersonic should be a really cool sounding word, but i just think 'lame low accuracy move'' -my friend. Sage, my friend. ",
+    "comment": "'supersonic should be a really cool sounding word, but i just think 'lame low accuracy move'' -my friend. Sage, my friend. The actual meaning is sick but after 10 billion Zubat wcyd.",
     "entry_date": "2016-12-26",
     "author": "me"
   },
@@ -215,7 +215,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "The Pokemon move is shooting stars. Plus, I am known to listen to Taylor Swift.",
     "entry_date": "2017-01-12",
     "author": "me"
   },
@@ -226,7 +226,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Nerd. 'sor' is a good looking and sounding sequence of letters.",
     "entry_date": "2016-10-09",
     "author": "me"
   },
@@ -237,7 +237,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "'sor' is a good looking and sounding sequence of letters. Bit of an old lamo form of headwear but should be good if you stay away from cheap looking plastic.",
     "entry_date": "2017-02-09",
     "author": "me"
   },
@@ -248,18 +248,18 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "'eor' is cool. Meteors come from space and space is cool.",
     "entry_date": "2017-02-11",
     "author": "me"
   },
   {
     "id": 22,
     "word": "hypersthene",
-    "sounds_good": true,
+    "sounds_good": false,
     "looks_good": true,
-    "means_good": true,
+    "means_good": false,
     "overall_good": true,
-    "comment": "",
+    "comment": "Really awkward to say and the term is pretty obscure. 'hyper' is good and 'sthene' is interesting.",
     "entry_date": "2017-02-24",
     "author": "me"
   },
@@ -270,7 +270,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Good associations with Dota 2. the 'c' augments the 'our' and 'ier' is a bit more satisfying an ending compared to 'er'.",
     "entry_date": "2017-02-27",
     "author": "me"
   },
@@ -281,7 +281,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "'au' and 'aug' are good sounds. Cool origins with fantastical elements.",
     "entry_date": "2017-03-31",
     "author": "me"
   },
@@ -292,7 +292,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "'str' is a good sequence. Cozy water-related words are cute.",
     "entry_date": "2017-04-20",
     "author": "me"
   },
@@ -303,7 +303,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "'is' with silent 's' is interesting. Cozy water-related words are cute.",
     "entry_date": "2017-06-11",
     "author": "me"
   },
@@ -314,7 +314,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Nerd. The addition of an uncommon 'ar' to 'line' gives this some extra points. ",
     "entry_date": "2017-09-21",
     "author": "me"
   },
@@ -325,7 +325,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Probably too overused in corporate settings, but having self-contained parts working together is cool. 'mod' sounds good even if it is very commonly associated with moderator.",
     "entry_date": "2017-12-05",
     "author": "me"
   },
@@ -336,7 +336,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Space is cool. Also we got an 'x'.",
     "entry_date": "2018-06-07",
     "author": "me"
   },
@@ -347,7 +347,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Simple, elegant word with good meaning.",
     "entry_date": "2018-06-28",
     "author": "me"
   },
@@ -356,9 +356,9 @@
     "word": "jortle",
     "sounds_good": true,
     "looks_good": true,
-    "means_good": true,
-    "overall_good": true,
-    "comment": "",
+    "means_good": false,
+    "overall_good": false,
+    "comment": "'ortle' sound is a bit tangled but in a fun way because of 'chortle'. However, the meaning is a bit redundant and it appears to be mostly slang, so it needs some more time to stew.",
     "entry_date": "2018-09-09",
     "author": "me"
   },
