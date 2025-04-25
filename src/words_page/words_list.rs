@@ -4,6 +4,13 @@ use crate::words_page::words_list_header::{FilterState, SortDirection, WordsList
 
 use super::word::{Word, WordComponent};
 
+// #[derive(Clone, PartialEq)]
+// pub enum ExpandState {
+//     AllExpanded,
+//     AllCollapsed,
+//     Inactive,
+// }
+
 #[derive(Properties, PartialEq)]
 pub struct WordsListProps {
     pub words: Vec<Word>,
@@ -141,12 +148,17 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
     //     Some(i) => Some(i),
     // };
 
-    // let is_detail_expanded = use_state(|| false);
-    // // let on_expand_click = on_expand_click.clone();
+    // let is_detail_expanded = use_state(|| ExpandState::Inactive);
     // let on_expand_all_click = {
     //     let is_detail_expanded = is_detail_expanded.clone();
     //     Callback::from(move |_| {
-    //         is_detail_expanded.set(true);
+    //         is_detail_expanded.set(ExpandState::AllExpanded);
+    //     })
+    // };
+    // let on_collapse_all_click = {
+    //     let is_detail_expanded = is_detail_expanded.clone();
+    //     Callback::from(move |_| {
+    //         is_detail_expanded.set(ExpandState::Inactive);
     //     })
     // };
 
@@ -154,6 +166,7 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
 
         <>
         // <button onclick={on_expand_all_click}>{"expand all"}</button>
+        // <button onclick={on_collapse_all_click}>{"collapse all"}</button>
 
         <table>
             <WordsListHeader on_click={on_column_select} sort_direction={sort_direction} on_date_click={on_date_column_select} date_sort_direction={date_direction} on_sound_good_click={on_column_select_sound} sound_filter={sound_filter} on_look_good_click={on_column_select_look} look_filter={look_filter} on_means_good_click={on_column_select_means} means_filter={means_filter} on_overall_good_click={on_column_select_overall} overall_filter={overall_filter} />
@@ -162,11 +175,15 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
             .iter()
             .map(|word| {
                 html! {
-                <WordComponent
-                    word={(*word).clone()}
-                    // is_detail_expanded={*is_detail_expanded.clone()}
-                />
-                }
+
+                    <WordComponent
+                        word={(*word).clone()}
+                        // is_detail_expanded={true}
+                    />
+
+                    }
+
+
             }).collect::<Html>()
         }
         </table>

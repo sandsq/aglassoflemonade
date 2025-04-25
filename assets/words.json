@@ -61,7 +61,7 @@
     "looks_good": false,
     "means_good": true,
     "overall_good": true,
-    "comment": "sometimes you don't got time to come up with a name",
+    "comment": "Sometimes you don't got time to come up with a name",
     "entry_date": "2025-04-22",
     "author": "me"
   },
@@ -71,8 +71,8 @@
     "sounds_good": true,
     "looks_good": true,
     "means_good": false,
-    "overall_good": true,
-    "comment": "Suggested by my friend who was looking for cool 5 letter words for wordle.",
+    "overall_good": false,
+    "comment": "Sounds cute but ladybugs eat aphids and ladybugs are good so aphids are bad. Friend's wordle word.",
     "entry_date": "2025-04-23",
     "author": "me"
   },
@@ -83,18 +83,18 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "'yl' and 'nyl' are cool letter sequences, many sounds containing 'v' are good, and vinyl is a cool retro medium. Suggested by my friend who was looking for cool 5 letter words for wordle.",
+    "comment": "'yl' and 'nyl' are cool letter sequences, many sounds containing 'v' are good, and vinyl is a cool retro medium. Friend's wordle word.",
     "entry_date": "2025-04-23",
     "author": "me"
   },
   {
     "id": 8,
     "word": "schwa",
-    "sounds_good": true,
+    "sounds_good": false,
     "looks_good": true,
-    "means_good": true,
-    "overall_good": true,
-    "comment": "Friend's wordle word.",
+    "means_good": false,
+    "overall_good": false,
+    "comment": "Meaning is kinda bland haha. 'sch' is a good sequence but the sound of the word is a bit unresolved. Friend's wordle word.",
     "entry_date": "2025-04-23",
     "author": "me"
   },
@@ -105,7 +105,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "I use arch btw.",
     "entry_date": "2016-10-08",
     "author": "me"
   },
@@ -116,7 +116,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Luster is like fancy shiny and everyone loves shiny things. Plus Latios's signature move is Luster Purge and Latios is cool.",
     "entry_date": "2016-10-09",
     "author": "me"
   },
@@ -127,7 +127,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Zappy things surge. Also Alolan Raichu's ability Surge Surfer sounds so sick.",
     "entry_date": "2016-10-21",
     "author": "me"
   },
@@ -138,7 +138,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Nerd.",
     "entry_date": "2016-11-01",
     "author": "me"
   },
@@ -149,7 +149,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Spine but fancy and mathy. 'spl' good. Nerd.",
     "entry_date": "2016-11-06",
     "author": "me"
   },
@@ -160,18 +160,18 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "First heard of this from Eragon. Concept is cool. 's', in case you haven't noticed, enhances everything.",
     "entry_date": "2016-11-19",
     "author": "me"
   },
   {
     "id": 14,
     "word": "edelweiss",
-    "sounds_good": true,
+    "sounds_good": false,
     "looks_good": true,
-    "means_good": true,
+    "means_good": false,
     "overall_good": true,
-    "comment": "",
+    "comment": "I'm not invested in the flower and the starting sound is apparently a long 'a' which makes it sound too honky in what is otherwise pretty elegant.",
     "entry_date": "2016-12-17",
     "author": "me"
   },
@@ -182,7 +182,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "Doujutsu like the sickest powers ever. 'oc' starting letters / sounds (like occult) are usually good. Don't think their roots are related but that's not what I'm talkin about.",
     "entry_date": "2016-12-18",
     "author": "me"
   },
@@ -191,9 +191,9 @@
     "word": "noel",
     "sounds_good": true,
     "looks_good": true,
-    "means_good": true,
+    "means_good": false,
     "overall_good": true,
-    "comment": "",
+    "comment": "'oe' good. Unfortunately I'm not that invested in Christmas (beside the music, which rules). The seasonal nature also means its usage remains low.",
     "entry_date": "2016-12-18",
     "author": "me"
   },
@@ -204,7 +204,7 @@
     "looks_good": true,
     "means_good": true,
     "overall_good": true,
-    "comment": "",
+    "comment": "'supersonic should be a really cool sounding word, but i just think 'lame low accuracy move'' -my friend. Sage, my friend. ",
     "entry_date": "2016-12-26",
     "author": "me"
   },
