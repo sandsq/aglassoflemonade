@@ -78,7 +78,8 @@ pub fn thoughts_list(WordsListProps { words }: &WordsListProps) -> Html {
     };
 
     // todo: I'm pretty sure this is incorrect. For example, if one filter is already pressed and I press another one, it should just apply the new filter onto the first, instead of recomputing all filters (which is what happens now)
-    let words = words.clone();
+    let mut words = words.clone();
+    words.sort_by(|a, b| b.entry_date.cmp(&a.entry_date));
     let mut words = words
         .iter()
         .filter(|&a| match sound_filter {
