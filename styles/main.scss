@@ -105,7 +105,6 @@ table tr:nth-child(4n) td {
         width: 10%;
     }
 }
-
 .negative {
     width: 15%;
     text-align: center;
@@ -122,7 +121,24 @@ table tr:nth-child(4n) td {
     border-bottom: 2px solid $fg4_color;
 }
 
+button {
+    background-color: $bg1_color;
+    border: 2px solid $fg_color;
+    border-radius: 0px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    box-shadow: 2px 3px $fg0_color;
+}
+button:hover {
+    background-color: $bg2_color;
+    cursor: pointer;
+}
+
 .active_sort {
     color: $bg1_color;
     background-color: $blue1;
+}
+.active_sort:hover {
+    /* color: $bg1_color; */
+    background-color: $blue2;
 }
