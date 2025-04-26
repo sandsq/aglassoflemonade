@@ -36,7 +36,7 @@ pub fn words() -> Html {
 
             <h1>{ "wordex" }</h1>
             <h2>{"what is"}</h2>
-            <p>{"judgin words based on some criteria"}</p>
+            <p>{"rating words"}</p>
 
             <h2>{"the dex"}</h2>
             <WordsList words={(*words).clone()} />
