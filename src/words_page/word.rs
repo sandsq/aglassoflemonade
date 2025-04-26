@@ -3,7 +3,6 @@ use serde::Deserialize;
 use yew::prelude::*;
 use yew_hooks::use_bool_toggle;
 
-
 #[derive(Properties, Clone, PartialEq, Deserialize)]
 pub struct Word {
     pub id: usize,

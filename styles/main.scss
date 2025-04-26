@@ -53,7 +53,7 @@ table {
         }
         td {
             border: $test_border_size solid black;
-            padding: 3px 0px 3px 0px;
+            padding: 5px 0px 5px 0px;
         }
     }
 }
@@ -74,6 +74,7 @@ table tr:nth-child(4n) td {
 
 .word_comment td {
     padding-left: 2rem;
+    padding-bottom: 1rem;
     visibility: visible;
 }
 .hide_word_comment {
