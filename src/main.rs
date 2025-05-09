@@ -2,6 +2,7 @@ mod about;
 mod home;
 mod nav_bar;
 mod thoughts_page;
+mod thread_length_calc_page;
 mod words_page;
 
 use yew::prelude::*;
@@ -13,6 +14,7 @@ use about::About;
 use home::Home;
 use nav_bar::Navbar;
 use thoughts_page::Thoughts;
+use thread_length_calc_page::ThreadLengthCalc;
 use words_page::Words;
 
 #[derive(Clone, Routable, PartialEq)]
@@ -25,6 +27,8 @@ enum Route {
     Thoughts,
     #[at("/words")]
     Words,
+    #[at("/thread-length-calc")]
+    ThreadLengthCalc,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -43,6 +47,9 @@ fn switch(routes: Route) -> Html {
         },
         Route::Words => html! {
             <Words />
+        },
+        Route::ThreadLengthCalc => html! {
+            <ThreadLengthCalc />
         },
         Route::NotFound => html! { <h1>{ "404" }</h1> },
     }

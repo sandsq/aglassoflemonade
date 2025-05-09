@@ -15,6 +15,7 @@ pub fn nav_bar() -> Html {
                 <li class="hvr-underline-reveal"><Link<Route> to={Route::Home}>{ "home" }</Link<Route>></li>
                 // <li class="hvr-underline-reveal"><Link<Route> to={Route::Thoughts}>{ "every thought" }</Link<Route>></li>
                 <li class="hvr-underline-reveal"><Link<Route> to={Route::Words}>{ "wordex" }</Link<Route>></li>
+                <li class="hvr-underline-reveal"><Link<Route> to={Route::ThreadLengthCalc}>{ "thread length calc" }</Link<Route>></li>
                 <li class="hvr-underline-reveal"><Link<Route> to={Route::About}>{ "about" }</Link<Route>></li>
             </ul>
             </nav>
