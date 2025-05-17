@@ -51,13 +51,16 @@ pub fn thread_length_calc() -> Html {
     html! {
         <>
             <h1>{
-                (*stitch_length).clone() * 2.0 + (ceil((*stitch_length).clone() / (*stitch_spacing).clone() + 1.0)) * (*leather_thickness).clone() + (*buffer).clone()
-                }{"mm"}
+                ((*stitch_length).clone() * 2.0 + (ceil((*stitch_length).clone() / (*stitch_spacing).clone() + 1.0)) * (*leather_thickness).clone() + (*buffer).clone()).ceil()
+                }{"mm"}{"   "}
+                {(((*stitch_length).clone() * 2.0 + (ceil((*stitch_length).clone() / (*stitch_spacing).clone() + 1.0)) * (*leather_thickness).clone() + (*buffer).clone()) / 25.4).ceil()}{"in"}
             </h1>
             <p>{"stitch length:"}<input type="number" oninput={on_input} />{"mm"}</p>
-                <p>{"leather thickness:"}<input type="number"  oninput={on_input_leather_thickness} />{"mm"}</p>
-                <p>{"stitch spacing:"}<input type="number"  oninput={on_input_stitch_spacing} />{"mm"}</p>
-                <p>{"buffer:"}<input type="number"  oninput={on_input_buffer} />{"mm"}</p>
+            <p>{"leather thickness:"}<input type="number"  oninput={on_input_leather_thickness} />{"mm"}</p>
+            <p>{"stitch spacing:"}<input type="number"  oninput={on_input_stitch_spacing} />{"mm"}</p>
+            <p>{"buffer:"}<input type="number"  oninput={on_input_buffer} />{"mm"}</p>
+            <p>{"2 * length + (ceiling(length / spacing) + 1) * thickness + buffer"}</p>
+            // <p>{"2 * "}{(*stitch_length).clone()}{" + "}</p>
         </>
     }
 }
