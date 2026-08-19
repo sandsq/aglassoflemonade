@@ -1,10 +1,10 @@
 use web_sys::js_sys::Math::ceil;
-use yew::prelude::*;
+// use yew::prelude::*;
 use yew::{Callback, Html, InputEvent, TargetCast, function_component, html, use_state};
 
-enum Msg {
-    InputValue(String),
-}
+// enum Msg {
+//     InputValue(String),
+// }
 
 #[function_component(ThreadLengthCalc)]
 pub fn thread_length_calc() -> Html {

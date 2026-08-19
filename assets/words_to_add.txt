@@ -3,4 +3,8 @@ dynamics
 puddle
 occult
 real world
+minaret
+
+words that sound like they mean
+finnicky
 
